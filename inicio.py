@@ -80,15 +80,12 @@ def main():
 
     if menu == "INICIO":
 
-        col1, col2 = st.columns([1,3])
+        col1, col2 = st.columns([1, 3])
 
         with col1:
 
             try:
-
-                imagen1 = Image.open(
-                    "imagenn.jpg"
-                )
+                imagen1 = Image.open("logo.jpg")
 
                 st.image(
                     imagen1,
@@ -96,23 +93,16 @@ def main():
                 )
 
             except:
-
-                st.warning(
-                    "Agrega imagen.jpg"
-                )
+                st.warning("Agrega logo.jpg")
 
         with col2:
 
-            st.title(
-                "Karla Lisseth Lopez Herrera"
-            )
+            st.title("Karla Lisseth Lopez Herrera")
 
-            st.subheader(
-                "Portafolio Profesional de Ciencia de Datos"
-            )
+            st.subheader("Descripcion")
 
             st.write("""
-Soy estudiante de Ingeniería en Sistemas.
+Soy estudiante de Ingeniería en Sistemas, apasionada a la ciencia de datos.
 
 Experiencia en:
 
@@ -124,7 +114,6 @@ Experiencia en:
         st.markdown("---")
 
         # KPIs
-
         c1, c2 = st.columns(2)
 
         c1.metric(
@@ -140,7 +129,6 @@ Experiencia en:
         st.markdown("---")
 
         # TECNOLOGÍAS
-
         st.header("🚀 Tecnologías")
 
         st.write("Python")
@@ -158,24 +146,16 @@ Experiencia en:
         st.markdown("---")
 
         # VIDEO YOUTUBE
-
         st.header("🎥 Data Storytelling")
 
-        youtube_url = (
-            "https://youtu.be/HQTzOubmOmI"
-        )
+        youtube_url = "https://youtu.be/HQTzOubmOmI"
 
-        st.video(
-            youtube_url
-        )
+        st.video(youtube_url)
 
         st.markdown("---")
 
         # ÁREAS
-
-        st.header(
-            "📌 Áreas del Portafolio"
-        )
+        st.header("📌 Áreas del Portafolio")
 
         c1, c2, c3 = st.columns(3)
 
@@ -194,14 +174,10 @@ Experiencia en:
             st.info("📂 Cargar archivos")
 
         with c5:
-            st.success(
-                "💬 Sentimientos"
-            )
+            st.success("💬 Sentimientos")
 
         with c6:
-            st.warning(
-                "🎯 Recomendación"
-            )
+            st.warning("🎯 Recomendación")
 
         st.markdown("---")
 
@@ -213,38 +189,25 @@ Experiencia en:
     elif menu == "EDA":
 
         try:
-
-            df = pd.read_csv(
-                "datos.csv",
-                sep=";"
-            )
-
+            df = pd.read_csv("datos.csv", sep=";")
             eda()
 
         except:
-
-            st.error(
-                "No se encontró datos.csv"
-            )
+            st.error("No se encontró datos.csv")
 
     elif menu == "ML":
-
         ml()
 
     elif menu == "SISTEMA DE RECOMENDACION":
-
         sm()
 
     elif menu == "IA":
-
         iA()
 
     elif menu == "Cargar archivos":
-
         csvj()
 
     elif menu == "Análisis de sentimientos":
-
         scrapyng()
 
 
